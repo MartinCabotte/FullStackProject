@@ -18,7 +18,7 @@ Dans la partie BackEnd du projet, il va falloir connecter plusieurs containeurs 
 
 Le projet va se dérouler comme suit :
 
-> Une première interface simpliste et minimaliste sera développée dans le but d'implémenter le necessaire au déroulé du code, à savoir un bouton qui va permettre à l'utilisateur de selectionner un fichier sur son ordinateur.
-> Ensuite, la partie BackEnd sera réalisée avec le traitement de l'image.
-> Enfin, nous reviendrons sur la partie FrontEnd pour que celle-ci soit ergonomique et esthétique.
+* Une première interface simpliste et minimaliste sera développée dans le but d'implémenter le necessaire au déroulé du code, à savoir un bouton qui va permettre à l'utilisateur de selectionner un fichier sur son ordinateur.
+* Ensuite, la partie BackEnd sera réalisée avec le traitement de l'image.
+* Enfin, nous reviendrons sur la partie FrontEnd pour que celle-ci soit ergonomique et esthétique.
 
