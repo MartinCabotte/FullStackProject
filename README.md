@@ -1,0 +1,24 @@
+# But du projet
+
+Le but de ce projet est de développer une webapp qui aura pour but de detecter un avion sur une image que l'utilisateur va upload sur le site. Le modèle qui detecte les avions dans une image est déjà existant et sera utilisé en boite noire.
+
+# Les besoins
+
+Ce projet a deux volets qui sont les suivants : un volet BackEnd et un volet FrontEnd. 
+
+## Le FrontEnd
+
+Dans cette partie du projet, le but est de réaliser une application simple, avec un graphisme si possible minimaliste où les informations sont aisement repérables dans le but d'avoir une application simple à utiliser et facile à appréhender. Le design sera donc sobre et les imformations les plus importantes devront être bien visibles.
+
+## Le BackEnd
+
+Dans la partie BackEnd du projet, il va falloir connecter plusieurs containeurs Docker pour qu'ils puissent interagir entre-eux (que ce soit un serveur web, une base de données, la boite noire de detection d'avions...). Le BackEnd devra ensuite retourner le résultat de la detection à la partie FrontEnd pour notifier à l'utilisateur l'information voulue.
+
+# Déroulé du projet et méthodologie
+
+Le projet va se dérouler comme suit :
+
+> Une première interface simpliste et minimaliste sera développée dans le but d'implémenter le necessaire au déroulé du code, à savoir un bouton qui va permettre à l'utilisateur de selectionner un fichier sur son ordinateur.
+> Ensuite, la partie BackEnd sera réalisée avec le traitement de l'image.
+> Enfin, nous reviendrons sur la partie FrontEnd pour que celle-ci soit ergonomique et esthétique.
+
