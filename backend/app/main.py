@@ -3,10 +3,11 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
+import requests
 
 app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi")
 
-origins = ["http://localhost", "http://frontend:3000"]
+origins = ["http://localhost", "http://frontend:3000", "http://localhost:8000"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -24,8 +25,10 @@ def root() -> Response:
 
 
 @app.get("/api/avion")
-def detection_avion(file: str):
-    return f"{file}"
+def detection_avion(image: str):
+    print(image)
+    response = requests.post("http://localhost:8000/", files={"file": open(image, "rb")}) 
+    return response
 
 
 if __name__ == "__main__":

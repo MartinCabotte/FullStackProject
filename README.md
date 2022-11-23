@@ -22,3 +22,9 @@ Le projet va se dérouler comme suit :
 * Ensuite, la partie BackEnd sera réalisée avec le traitement de l'image.
 * Enfin, nous reviendrons sur la partie FrontEnd pour que celle-ci soit ergonomique et esthétique.
 
+# Problèmes rencontrés
+
+Les problèmes rencontrés ne proviennent pas de la technique en elle-même. La majeure partie des problèmes proviennent de npm ainsi que des packages python utilisés qui ne fonctionnent pas correctement.
+
+* Première erreur, le chargement du module requests qui ne fonctionne pas, bien qu'installé sur l'ordinateur et installé dans le Dockerfile, celui-ci ne se lance pas correctement empêchant l'utilisation de l'API.
+* Deuxième problème, l'image Docker du modèle python "boite noire" qui detecte les avions ne se lance pas correctement avec une erreur au niveau du package *gitpython* qui ne s'installe pas correctement au lancement de l'image Docker.
