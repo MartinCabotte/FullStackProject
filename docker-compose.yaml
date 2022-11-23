@@ -1,0 +1,55 @@
+version: "3"
+
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:1.17
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./logs/nginx:/var/log/nginx
+    ports:
+      - 80:80
+    depends_on:
+      - frontend
+      - backend
+
+  backend:
+    container_name: backend
+    restart: unless-stopped
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    environment:
+      PYTHONPATH: .
+      DATABASE_URL: postgresql://root:password@postgres:5432/root
+    volumes:
+      - ./backend:/app
+      - ./logs/backend:/logs
+
+  frontend:
+    container_name: frontend
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend/app:/app
+    ports:
+      - 3000:3000
+    environment:
+      NODE_ENV: development
+      CHOKIDAR_USEPOLLING: "true"
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
