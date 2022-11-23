@@ -14,10 +14,17 @@ export const App = () => {
 
   return (
     <div>
-      Enter your name: <br />
-      <input onChange={(e) => setName(e.target.value)} value={name} />
+      
+      {/* <input onChange={(e) => setName(e.target.value)} value={name} />
       <button onClick={handleClick}>Submit</button>
-      <p>API said: {apiMessage}</p>
+      <p>API said: {apiMessage}</p> */}
+
+      Telecharger l'image: <br />
+      <form action="/action_page.php">
+        <input type="file" id="img" name="img" accept="image/*" />
+        <input type="submit" />
+      </form>
+      
     </div>
   );
 };
