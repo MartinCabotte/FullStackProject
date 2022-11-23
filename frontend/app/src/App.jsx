@@ -7,17 +7,18 @@ export const App = () => {
   const handleClick = async () => {
     if (name === "") return;
 
-    const response = await fetch(`/api/hello?name=${name}`, { method: "GET" });
+    const response = await fetch(`/api/avion?file=${name}`, { method: "GET" });
     const message = await response.json();
     setApiMessage(message);
   };
 
   return (
     <div>
-      Enter your name: <br />
-      <input onChange={(e) => setName(e.target.value)} value={name} />
+      Entrer le fichier à traiter: <br />
+
+      <input type="file" onChange={(e) => setName(e.target.value)} value={name} id="img" name="img" accept="image/*" />
       <button onClick={handleClick}>Submit</button>
-      <p>API said: {apiMessage}</p>
+      <p>Path du fichier: {apiMessage}</p>
     </div>
   );
 };

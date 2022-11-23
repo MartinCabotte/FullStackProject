@@ -23,9 +23,9 @@ def root() -> Response:
     return Response(status_code=200)
 
 
-@app.get("/api/hello")
-def say_hello(name: str):
-    return f"Hello {name}!"
+@app.get("/api/avion")
+def detection_avion(file: str):
+    return f"{file}"
 
 
 if __name__ == "__main__":
